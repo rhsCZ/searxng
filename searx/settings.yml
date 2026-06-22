@@ -41,8 +41,8 @@ search:
   # Filter results. 0: None, 1: Moderate, 2: Strict
   safe_search: 0
   # Existing autocomplete backends: "360search", "baidu", "bing", "brave", "dbpedia", "duckduckgo", "google",
-  # "yandex", "mwmbl", "naver", "seznam", "sogou", "startpage", "swisscows", "quark", "qwant", "wikipedia" -
-  # leave blank to turn it off by default.
+  # "yandex", "privacywall", "mwmbl", "naver", "seznam", "sogou", "startpage", "swisscows", "quark", "qwant",
+  # "wikipedia" - leave blank to turn it off by default.
   autocomplete: ""
   # minimun characters to type before autocompleter starts
   autocomplete_min: 4
@@ -320,6 +320,24 @@ engines:
     shortcut: 9g
     disabled: true
 
+  - name: abcnyheter
+    engine: xpath
+    categories: general
+    paging: true
+    search_url: https://startsiden.abcnyheter.no/sok/?q={query}&page={pageno}
+    shortcut: abc
+    disabled: true
+    results_xpath: //ul[contains(@class, "results__list")]/li[contains(@class, "result")]
+    url_xpath: ./a/@href
+    title_xpath: ./a/h3
+    content_xpath: ./div
+    language: "no"
+    about:
+      website: https://abcnyheter.no
+      use_official_api: false
+      require_api_key: false
+      results: HTML
+
   - name: acfun
     engine: acfun
     shortcut: acf
@@ -426,27 +444,6 @@ engines:
     shortcut: conda
     disabled: true
 
-  - name: aol
-    engine: aol
-    search_type: search
-    categories: [general]
-    shortcut: aol
-    disabled: true
-
-  - name: aol images
-    engine: aol
-    search_type: image
-    categories: [images]
-    shortcut: aoli
-    disabled: true
-
-  - name: aol videos
-    engine: aol
-    search_type: video
-    categories: [videos]
-    shortcut: aolv
-    disabled: true
-
   - name: arch linux wiki
     engine: archlinux
     shortcut: al
@@ -473,6 +470,23 @@ engines:
   - name: arxiv
     engine: arxiv
     shortcut: arx
+
+  - name: ayo
+    engine: xpath
+    categories: general
+    shortcut: ayo
+    search_url: https://search.ayo.de/search?q={query}
+    results_xpath: //div[contains(@class, 'search-result')]/div
+    url_xpath: .//a/@href
+    title_xpath: .//h3
+    content_xpath: .//p
+    suggestion_xpath: .//a[starts-with(@href, "https://search.ayo.de")]
+    disabled: true
+    about:
+      website: https://serach.ayo.de
+      use_official_api: false
+      require_api_key: false
+      results: HTML
 
   - name: azure
     engine: azure
@@ -608,6 +622,12 @@ engines:
     engine: cara
     shortcut: ca
     disabled: true
+
+  # - name: chatnoir
+  #   engine: chatnoir
+  #   shortcut: cha
+  #   search_index: cw22
+  #   disabled: true
 
   - name: chefkoch
     engine: chefkoch
@@ -914,6 +934,24 @@ engines:
     timeout: 3.0
     disabled: true
 
+  - name: fastbot
+    engine: xpath
+    search_url: https://fastbot.de/search?q={query}
+    results_xpath: //section[contains(@class, 'organic-results')]/div[contains(@class, 'result-item')]
+    url_xpath: (./a/@href)[last()]
+    title_xpath: (./a)[last()]
+    content_xpath: ./div[contains(@class, 'snippet')]
+    suggestion_xpath: //section[contains(@class, 'related-searches')]//a/span[1]
+    shortcut: fa
+    categories: general
+    disabled: true
+    about:
+      website: https://fastbot.de
+      official_api_documentation:
+      use_official_api: false
+      require_api_key: false
+      results: HTML
+
   - name: fdroid
     engine: fdroid
     shortcut: fd
@@ -1022,6 +1060,7 @@ engines:
 
   - name: gabanza
     engine: xpath
+    categories: general
     search_url: https://www.gabanza.com/search?query={query}
     shortcut: gab
     timeout: 4
@@ -1436,6 +1475,38 @@ engines:
     shortcut: luc
     timeout: 3.0
 
+  - name: luxxle
+    engine: luxxle
+    categories: general
+    luxxle_categ: search
+    shortcut: lux
+    disabled: true
+    inactive: true
+
+  - name: luxxle images
+    engine: luxxle
+    categories: images
+    luxxle_categ: images
+    shortcut: luxi
+    disabled: true
+    inactive: true
+
+  - name: luxxle videos
+    engine: luxxle
+    categories: videos
+    luxxle_categ: videos
+    shortcut: luxv
+    disabled: true
+    inactive: true
+
+  - name: luxxle news
+    engine: luxxle
+    categories: news
+    luxxle_categ: news
+    shortcut: luxn
+    disabled: true
+    inactive: true
+
   - name: marginalia
     engine: marginalia
     shortcut: mar
@@ -1794,6 +1865,11 @@ engines:
   #    query_str: 'SELECT * from my_table WHERE my_column = %(query)s'
   #    shortcut : psql
 
+  - name: podchaser
+    engine: podchaser
+    shortcut: poc
+    disabled: true
+
   - name: presearch
     engine: presearch
     search_type: search
@@ -1933,6 +2009,27 @@ engines:
     engine: radio_browser
     shortcut: rb
 
+  - name: rawweb
+    engine: json_engine
+    shortcut: rw
+    categories: general
+    paging: true
+    search_url: 'https://api.rawweb.org/api/search?keyword={query}&page={pageno}&lang=*'
+    results_query: data
+    url_query: link
+    title_query: title
+    content_query: content
+    title_html_to_text: true
+    content_html_to_text: true
+    disabled: true
+    inactive: true
+    about:
+      website: https://rawweb.org
+      official_api_documentation:
+      use_official_api: false
+      require_api_key: false
+      results: JSON
+
   - name: reddit
     engine: reddit
     shortcut: re
@@ -2051,6 +2148,28 @@ engines:
     shortcut: pi
     categories: [it, q&a]
     base_url: 'https://discourse.pi-hole.net'
+    disabled: true
+
+  - name: privacywall
+    engine: privacywall
+    categories: general
+    privacywall_category: general
+    paging: false  # only images and videos support pagination
+    shortcut: pw
+    disabled: true
+
+  - name: privacywall images
+    engine: privacywall
+    categories: images
+    privacywall_category: images
+    shortcut: pwi
+    disabled: true
+
+  - name: privacywall videos
+    engine: privacywall
+    categories: videos
+    privacywall_category: videos
+    shortcut: pwv
     disabled: true
 
   # - name: searx
@@ -2191,6 +2310,36 @@ engines:
     content_xpath: .//div[contains(@class,"overview")]
     shortcut: tm
     disabled: true
+
+  - name: tonline
+    engine: tonline
+    shortcut: tol
+    disabled: true
+    inactive: true
+
+  - name: tonline images
+    engine: tonline
+    categories: images
+    tonline_categ: images
+    shortcut: toli
+    disabled: true
+    inactive: true
+
+  - name: tonline videos
+    engine: tonline
+    categories: videos
+    tonline_categ: videos
+    shortcut: tolv
+    disabled: true
+    inactive: true
+
+  - name: tonline news
+    engine: tonline
+    categories: news
+    tonline_categ: news
+    shortcut: toln
+    disabled: true
+    inactive: true
 
   # Requires Tor
   - name: torch
@@ -2630,9 +2779,104 @@ engines:
     categories: videos
     disabled: true
 
+  - name: reloado
+    engine: xpath
+    paging: true
+    search_url: https://reloado.com/search?q={query}&page={pageno}
+    results_xpath: //div[contains(@class, 'result-item')]
+    url_xpath: .//div[contains(@class, 'result-title')]/a/@href
+    title_xpath: .//div[contains(@class, 'result-title')]/a
+    content_xpath: .//div[contains(@class, 'result-excerpt')]
+    shortcut: rel
+    categories: general
+    disabled: true
+    language: de
+    about:
+      website: https://reloado.com
+      official_api_documentation:
+      use_official_api: false
+      require_api_key: false
+      results: HTML
+
   - name: repology
     engine: repology
     shortcut: rep
+    disabled: true
+    inactive: true
+
+  - name: resulthunter
+    engine: resulthunter
+    resulthunter_categ: web
+    categories: general
+    shortcut: reh
+    disabled: true
+
+  - name: resulthunter images
+    engine: resulthunter
+    resulthunter_categ: images
+    categories: images
+    shortcut: rehi
+    disabled: true
+
+  - name: searchch
+    engine: xpath
+    shortcut: sch
+    paging: true
+    search_url: https://search.ch/web/api/loadmore.html?path=/web/&q={query}&page={pageno}
+    results_xpath: //div[contains(@class, 'www-feed-web-result')]
+    # the URL looks like "//search.ch/web/r/redirect?...result!uffe8997e781e241d/https://example.com"
+    url_xpath: concat('https://', substring-after(.//a[contains(@class, 'sl-gus-result-url')]/@href, '://'))
+    title_xpath: .//a[contains(@class, 'sl-gus-result-title')]
+    content_xpath: .//div[contains(@class, 'sl-gus-result-body')]
+    language: "ch"
+    disabled: true
+    about:
+      website: https://search.ch/web
+      description: "Swiss search engine with its own Swiss index"
+      use_official_api: false
+      require_api_key: false
+      results: HTML
+
+  - name: searchzee
+    engine: json_engine
+    search_url: https://searchzee.com/api/search?q={query}&type=web&offset={pageno}
+    paging: true
+    first_page_num: 0
+    results_query: results
+    url_query: url
+    title_query: title
+    content_query: summary
+    content_html_to_text: true
+    categories: general
+    shortcut: sz
+    disabled: true
+    inactive: true
+    about:
+      website: https://searchzee.com
+      use_official_api: false
+      require_api_key: false
+      results: JSON
+
+  - name: searchzee news
+    engine: json_engine
+    search_url: https://searchzee.com/api/search?q={query}&type=news&offset={pageno}{time_range}
+    paging: true
+    first_page_num: 0
+    time_range_support: true
+    time_range_url: "&freshness={time_range_val}"
+    time_range_map:
+      day: pd
+      week: pw
+      month: pm
+      year: py
+    results_query: results
+    url_query: url
+    title_query: title
+    content_query: summary
+    thumbnail_query: thumbnail
+    content_html_to_text: true
+    categories: news
+    shortcut: sznw
     disabled: true
     inactive: true
 
@@ -2684,13 +2928,13 @@ engines:
     content_xpath: //div[@class="synonyms-list-group"]
     title_xpath: //div[@class="upper-synonyms"]/a
     no_result_for_http_status: [404]
+    language: de
     about:
       website: https://www.woxikon.de/
       wikidata_id:  # No Wikidata ID
       use_official_api: false
       require_api_key: false
       results: HTML
-      language: de
 
   - name: tootfinder
     engine: tootfinder
@@ -2704,6 +2948,27 @@ engines:
   - name: voidlinux
     engine: voidlinux
     shortcut: void
+    disabled: true
+
+  - name: vuhuv
+    engine: vuhuv
+    categories: general
+    vuhuv_category: general
+    shortcut: vu
+    disabled: true
+
+  - name: vuhuv images
+    engine: vuhuv
+    categories: images
+    vuhuv_category: images
+    shortcut: vui
+    disabled: true
+
+  - name: vuhuv videos
+    engine: vuhuv
+    categories: videos
+    vuhuv_category: videos
+    shortcut: vuv
     disabled: true
 
   - name: wallhaven
@@ -2724,13 +2989,13 @@ engines:
     content_xpath: //li/div[@class="searchresult"]
     categories: general
     disabled: true
+    language: fr
     about:
       website: https://wikimini.org/
       wikidata_id: Q3568032
       use_official_api: false
       require_api_key: false
       results: HTML
-      language: fr
 
   - name: wttr.in
     engine: wttr
@@ -2740,6 +3005,7 @@ engines:
   - name: zapmeta
     engine: xpath
     shortcut: zpm
+    categories: general
     search_url: https://www.zapmeta.com/search?q={query}&pg={pageno}
     results_xpath: //article[contains(@class, "organic-results-item")]
     url_xpath: ./h2/a/@href
@@ -2838,6 +3104,38 @@ engines:
     about:
       website: https://minecraft.wiki/
       wikidata_id: Q105533483
+
+  # s1search google engines / mirrors
+  - name: searchtoday
+    engine: s1search
+    shortcut: std
+    base_url: https://info.searchtoday.site
+    disabled: true
+
+  # - name: webcrawler
+  #   engine: s1search
+  #   shortcut: wc
+  #   base_url: https://www.webcrawler.com
+  #   disabled: true
+
+  # s1search yahoo engines / mirrors
+  # - name: excite
+  #   engine: s1search
+  #   shortcut: exc
+  #   base_url: https://results.excite.com.s1search.co
+  #   disabled: true
+
+  # - name: metacrawler
+  #   engine: s1search
+  #   shortcut: mec
+  #   base_url: https://search.metacrawler.com
+  #   disabled: true
+
+  - name: infospace
+    engine: s1search
+    shortcut: ifs
+    base_url: https://search.infospace.com
+    disabled: true
 
 # Doku engine lets you access to any Doku wiki instance:
 # A public one or a privete/corporate one.

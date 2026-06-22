@@ -76,6 +76,9 @@ from lxml import html
 from searx.utils import extract_text, extract_url, eval_xpath, eval_xpath_list
 from searx.network import raise_for_httperror
 from searx.result_types import EngineResults
+from searx.enginelib import EngineAbout
+
+about = EngineAbout()
 
 search_url = None
 """
@@ -289,7 +292,7 @@ def response(resp) -> EngineResults:  # pylint: disable=too-many-branches
 
     if results_xpath:
         for result in eval_xpath_list(dom, results_xpath):
-            url = extract_url(eval_xpath_list(result, url_xpath, min_len=1), search_url)
+            url = extract_url(eval_xpath(result, url_xpath), search_url)
             title = extract_text(eval_xpath_list(result, title_xpath, min_len=1))
             content = extract_text(eval_xpath_list(result, content_xpath))
             tmp_result = {'url': url, 'title': title, 'content': content}
