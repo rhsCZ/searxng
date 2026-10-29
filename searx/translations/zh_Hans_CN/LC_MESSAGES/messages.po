@@ -49,21 +49,23 @@
 # Jeex <jeex@users.noreply.translate.codeberg.org>, 2025.
 # BBTranslate <bbtranslate@users.noreply.translate.codeberg.org>, 2025.
 # Outbreak2096 <outbreak2096@noreply.codeberg.org>, 2025, 2026.
+# cyh21185 <cyh21185@noreply.codeberg.org>, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version:  searx\n"
+"Project-Id-Version: searx\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-09-21 12:54+0000\n"
-"PO-Revision-Date: 2026-06-14 13:07+0000\n"
-"Last-Translator: Outbreak2096 <outbreak2096@noreply.codeberg.org>\n"
+"POT-Creation-Date: 2026-10-09 19:03+0000\n"
+"PO-Revision-Date: 2026-10-20 12:27+0000\n"
+"Last-Translator: cyh21185 <cyh21185@noreply.codeberg.org>\n"
 "Language: zh_Hans_CN\n"
-"Language-Team: Chinese (Simplified Han script) "
-"<https://translate.codeberg.org/projects/searxng/searxng/zh_Hans/>\n"
+"Language-Team: Chinese (Simplified Han script) <https://"
+"translate.codeberg.org/projects/searxng/searxng/zh_Hans/>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
+"X-Generator: Weblate 2026.10.1\n"
 
 #. CONSTANT_NAMES['NO_SUBGROUPING']
 #: searx/searxng.msg
@@ -83,7 +85,7 @@ msgstr "应用"
 #. CATEGORY_NAMES['BLOGS']
 #: searx/searxng.msg
 msgid "blogs"
-msgstr ""
+msgstr "博客"
 
 #. CATEGORY_NAMES['DICTIONARIES']
 #: searx/searxng.msg
@@ -103,7 +105,7 @@ msgstr "综合"
 #. CATEGORY_NAMES['ICONS']
 #: searx/searxng.msg
 msgid "icons"
-msgstr ""
+msgstr "图标"
 
 #. CATEGORY_NAMES['IMAGES']
 #: searx/searxng.msg
@@ -128,7 +130,7 @@ msgstr "地图"
 #. CATEGORY_NAMES['MOVIES']
 #: searx/searxng.msg
 msgid "movies"
-msgstr ""
+msgstr "电影"
 
 #. CATEGORY_NAMES['MUSIC']
 #: searx/searxng.msg
@@ -188,12 +190,12 @@ msgstr "软件维基"
 #. CATEGORY_NAMES['STOCK_IMAGES']
 #: searx/searxng.msg
 msgid "stock images"
-msgstr ""
+msgstr "库存图片"
 
 #. CATEGORY_NAMES['TRANSLATE']
 #: searx/searxng.msg
 msgid "translate"
-msgstr ""
+msgstr "翻译"
 
 #. CATEGORY_NAMES['TV']
 #: searx/searxng.msg
@@ -208,7 +210,7 @@ msgstr "视频"
 #. CATEGORY_NAMES['WEATHER']
 #: searx/searxng.msg
 msgid "weather"
-msgstr ""
+msgstr "天气"
 
 #. CATEGORY_NAMES['WEB']
 #: searx/searxng.msg
@@ -619,15 +621,107 @@ msgstr "来源"
 msgid "Error loading the next page"
 msgstr "载入下个页面时发生错误"
 
-#: searx/webapp.py:478 searx/webapp.py:878
+#: searx/webapp.py:332
+msgid "close"
+msgstr "\t"
+
+#: searx/webapp.py:333
+msgid "How to navigate SearXNG with hotkeys"
+msgstr ""
+
+#: searx/webapp.py:334
+msgid "Control"
+msgstr ""
+
+#: searx/webapp.py:335
+msgid "Results"
+msgstr ""
+
+#: searx/webapp.py:336
+msgid "Navigation"
+msgstr ""
+
+#: searx/webapp.py:337
+msgid "Other"
+msgstr ""
+
+#: searx/webapp.py:338
+msgid "remove focus from the focused input"
+msgstr ""
+
+#: searx/webapp.py:339
+msgid "copy url of the selected result to the clipboard"
+msgstr ""
+
+#: searx/webapp.py:340
+msgid "toggle help window"
+msgstr ""
+
+#: searx/webapp.py:341
+msgid "focus on the search input"
+msgstr ""
+
+#: searx/webapp.py:342
+msgid "go to next page"
+msgstr ""
+
+#: searx/webapp.py:343
+msgid "open search result"
+msgstr ""
+
+#: searx/webapp.py:344
+msgid "go to previous page"
+msgstr ""
+
+#: searx/webapp.py:345
+msgid "reload page from the server"
+msgstr ""
+
+#: searx/webapp.py:346
+msgid "open the result in a new tab"
+msgstr ""
+
+#: searx/webapp.py:347
+msgid "select previous search result"
+msgstr ""
+
+#: searx/webapp.py:348
+msgid "select next search result"
+msgstr ""
+
+#: searx/webapp.py:349
+msgid "scroll one page up"
+msgstr ""
+
+#: searx/webapp.py:350
+msgid "scroll half a page down"
+msgstr ""
+
+#: searx/webapp.py:351
+msgid "scroll one page down"
+msgstr ""
+
+#: searx/webapp.py:352
+msgid "scroll to the top of the page"
+msgstr ""
+
+#: searx/webapp.py:353
+msgid "scroll half a page up"
+msgstr ""
+
+#: searx/webapp.py:354
+msgid "scroll to the bottom of the page"
+msgstr ""
+
+#: searx/webapp.py:502 searx/webapp.py:902
 msgid "Invalid settings, please edit your preferences"
 msgstr "无效设置，请编辑您的首选项"
 
-#: searx/webapp.py:494
+#: searx/webapp.py:518
 msgid "Invalid settings"
 msgstr "无效设置"
 
-#: searx/webapp.py:570 searx/webapp.py:660
+#: searx/webapp.py:594 searx/webapp.py:684
 msgid "search error"
 msgstr "搜索错误"
 
@@ -826,11 +920,12 @@ msgid ""
 " page"
 msgstr "滚动到当前页面底部时自动加载下一页"
 
-#: searx/plugins/oa_doi_rewrite.py:54
+#: searx/plugins/oa_doi_rewrite.py:55
 msgid "Open Access DOI rewrite"
 msgstr "开放访问 DOI 重写"
 
-#: searx/plugins/oa_doi_rewrite.py:55
+#: searx/plugins/oa_doi_rewrite.py:56
+#: searx/templates/simple/preferences/doi_resolver.html:15
 msgid ""
 "Avoid paywalls by redirecting to open-access versions of publications "
 "when available"
@@ -1438,17 +1533,9 @@ msgstr "插入复制的首选项散列（不带 URL）进行还原"
 msgid "Preferences hash"
 msgstr "首选项散列"
 
-#: searx/templates/simple/preferences/doi_resolver.html:1
-msgid "Digital Object Identifier (DOI)"
-msgstr "数字对象唯一标识符（DOI）"
-
-#: searx/templates/simple/preferences/doi_resolver.html:6
-msgid "Open Access DOI resolver"
-msgstr "开放访问 DOI 解析器"
-
-#: searx/templates/simple/preferences/doi_resolver.html:18
-msgid "Select service used by DOI rewrite"
-msgstr "选择 DOI 重写使用的服务"
+#: searx/templates/simple/preferences/doi_resolver.html:2
+msgid "DOI Resolver"
+msgstr ""
 
 #: searx/templates/simple/preferences/engines.html:9
 msgid ""
@@ -2366,3 +2453,11 @@ msgstr "隐藏视频"
 #~ msgid "Engine"
 #~ msgstr "引擎"
 
+#~ msgid "Digital Object Identifier (DOI)"
+#~ msgstr "数字对象唯一标识符（DOI）"
+
+#~ msgid "Open Access DOI resolver"
+#~ msgstr "开放访问 DOI 解析器"
+
+#~ msgid "Select service used by DOI rewrite"
+#~ msgstr "选择 DOI 重写使用的服务"
