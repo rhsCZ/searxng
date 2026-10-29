@@ -29,7 +29,7 @@
 # curtwheeler <curtwheeler@users.noreply.translate.codeberg.org>, 2025.
 # return42 <return42@noreply.codeberg.org>, 2025, 2026.
 # yurtpage <yurtpage@noreply.codeberg.org>, 2025.
-# kotovasia <kotovasia@noreply.codeberg.org>, 2025.
+# kotovasia <kotovasia@noreply.codeberg.org>, 2025, 2026.
 # IcewindX <icewindx@noreply.codeberg.org>, 2025.
 # 0ko <0ko@noreply.codeberg.org>, 2025.
 # greatdng <greatdng@noreply.codeberg.org>, 2026.
@@ -38,9 +38,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  searx\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-09-21 12:54+0000\n"
-"PO-Revision-Date: 2026-06-24 10:07+0000\n"
-"Last-Translator: code_gremlin <code_gremlin@noreply.codeberg.org>\n"
+"POT-Creation-Date: 2026-10-09 19:03+0000\n"
+"PO-Revision-Date: 2026-10-09 14:20+0000\n"
+"Last-Translator: kotovasia <kotovasia@noreply.codeberg.org>\n"
 "Language: ru\n"
 "Language-Team: Russian "
 "<https://translate.codeberg.org/projects/searxng/searxng/ru/>\n"
@@ -70,7 +70,7 @@ msgstr "приложения"
 #. CATEGORY_NAMES['BLOGS']
 #: searx/searxng.msg
 msgid "blogs"
-msgstr ""
+msgstr "блоги"
 
 #. CATEGORY_NAMES['DICTIONARIES']
 #: searx/searxng.msg
@@ -90,7 +90,7 @@ msgstr "общие"
 #. CATEGORY_NAMES['ICONS']
 #: searx/searxng.msg
 msgid "icons"
-msgstr ""
+msgstr "иконки"
 
 #. CATEGORY_NAMES['IMAGES']
 #: searx/searxng.msg
@@ -115,7 +115,7 @@ msgstr "карты"
 #. CATEGORY_NAMES['MOVIES']
 #: searx/searxng.msg
 msgid "movies"
-msgstr ""
+msgstr "фильмы"
 
 #. CATEGORY_NAMES['MUSIC']
 #: searx/searxng.msg
@@ -175,12 +175,12 @@ msgstr "программные вики"
 #. CATEGORY_NAMES['STOCK_IMAGES']
 #: searx/searxng.msg
 msgid "stock images"
-msgstr ""
+msgstr "стоковые изображения"
 
 #. CATEGORY_NAMES['TRANSLATE']
 #: searx/searxng.msg
 msgid "translate"
-msgstr ""
+msgstr "перевод"
 
 #. CATEGORY_NAMES['TV']
 #: searx/searxng.msg
@@ -195,7 +195,7 @@ msgstr "видео"
 #. CATEGORY_NAMES['WEATHER']
 #: searx/searxng.msg
 msgid "weather"
-msgstr ""
+msgstr "погода"
 
 #. CATEGORY_NAMES['WEB']
 #: searx/searxng.msg
@@ -606,15 +606,107 @@ msgstr "Источник"
 msgid "Error loading the next page"
 msgstr "Не удалось загрузить следующую страницу"
 
-#: searx/webapp.py:478 searx/webapp.py:878
+#: searx/webapp.py:332
+msgid "close"
+msgstr ""
+
+#: searx/webapp.py:333
+msgid "How to navigate SearXNG with hotkeys"
+msgstr ""
+
+#: searx/webapp.py:334
+msgid "Control"
+msgstr ""
+
+#: searx/webapp.py:335
+msgid "Results"
+msgstr ""
+
+#: searx/webapp.py:336
+msgid "Navigation"
+msgstr ""
+
+#: searx/webapp.py:337
+msgid "Other"
+msgstr ""
+
+#: searx/webapp.py:338
+msgid "remove focus from the focused input"
+msgstr ""
+
+#: searx/webapp.py:339
+msgid "copy url of the selected result to the clipboard"
+msgstr ""
+
+#: searx/webapp.py:340
+msgid "toggle help window"
+msgstr ""
+
+#: searx/webapp.py:341
+msgid "focus on the search input"
+msgstr ""
+
+#: searx/webapp.py:342
+msgid "go to next page"
+msgstr ""
+
+#: searx/webapp.py:343
+msgid "open search result"
+msgstr ""
+
+#: searx/webapp.py:344
+msgid "go to previous page"
+msgstr ""
+
+#: searx/webapp.py:345
+msgid "reload page from the server"
+msgstr ""
+
+#: searx/webapp.py:346
+msgid "open the result in a new tab"
+msgstr ""
+
+#: searx/webapp.py:347
+msgid "select previous search result"
+msgstr ""
+
+#: searx/webapp.py:348
+msgid "select next search result"
+msgstr ""
+
+#: searx/webapp.py:349
+msgid "scroll one page up"
+msgstr ""
+
+#: searx/webapp.py:350
+msgid "scroll half a page down"
+msgstr ""
+
+#: searx/webapp.py:351
+msgid "scroll one page down"
+msgstr ""
+
+#: searx/webapp.py:352
+msgid "scroll to the top of the page"
+msgstr ""
+
+#: searx/webapp.py:353
+msgid "scroll half a page up"
+msgstr ""
+
+#: searx/webapp.py:354
+msgid "scroll to the bottom of the page"
+msgstr ""
+
+#: searx/webapp.py:502 searx/webapp.py:902
 msgid "Invalid settings, please edit your preferences"
 msgstr "Неправильные параметры, пожалуйста, измените ваши настройки"
 
-#: searx/webapp.py:494
+#: searx/webapp.py:518
 msgid "Invalid settings"
 msgstr "Неверные настройки"
 
-#: searx/webapp.py:570 searx/webapp.py:660
+#: searx/webapp.py:594 searx/webapp.py:684
 msgid "search error"
 msgstr "ошибка поиска"
 
@@ -824,11 +916,12 @@ msgstr ""
 "Автоматически загружает следующую страницу при прокрутке до конца текущей"
 " страницы"
 
-#: searx/plugins/oa_doi_rewrite.py:54
+#: searx/plugins/oa_doi_rewrite.py:55
 msgid "Open Access DOI rewrite"
 msgstr "Искать Open Access DOI"
 
-#: searx/plugins/oa_doi_rewrite.py:55
+#: searx/plugins/oa_doi_rewrite.py:56
+#: searx/templates/simple/preferences/doi_resolver.html:15
 msgid ""
 "Avoid paywalls by redirecting to open-access versions of publications "
 "when available"
@@ -1447,19 +1540,9 @@ msgstr "Вставить скопированный хэш настроек (б�
 msgid "Preferences hash"
 msgstr "Хэш настроек"
 
-#: searx/templates/simple/preferences/doi_resolver.html:1
-msgid "Digital Object Identifier (DOI)"
-msgstr "Цифровой идентификатор объекта (DOI)"
-
-#: searx/templates/simple/preferences/doi_resolver.html:6
-msgid "Open Access DOI resolver"
-msgstr "Источник Open Access DOI"
-
-#: searx/templates/simple/preferences/doi_resolver.html:18
-msgid "Select service used by DOI rewrite"
+#: searx/templates/simple/preferences/doi_resolver.html:2
+msgid "DOI Resolver"
 msgstr ""
-"Выберите службу, используемую переписыванием «Цифрового идентификатора "
-"объекта»"
 
 #: searx/templates/simple/preferences/engines.html:9
 msgid ""
@@ -2472,4 +2555,15 @@ msgstr "скрыть видео"
 
 #~ msgid "Engine"
 #~ msgstr "Движок"
+
+#~ msgid "Digital Object Identifier (DOI)"
+#~ msgstr "Цифровой идентификатор объекта (DOI)"
+
+#~ msgid "Open Access DOI resolver"
+#~ msgstr "Источник Open Access DOI"
+
+#~ msgid "Select service used by DOI rewrite"
+#~ msgstr ""
+#~ "Выберите службу, используемую переписыванием "
+#~ "«Цифрового идентификатора объекта»"
 
