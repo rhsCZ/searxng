@@ -174,7 +174,7 @@ class OnlineProcessor(EngineProcessor):
         }
         for key in ("curl_options", "impersonate", "default_headers"):
             if params.get(key) is not None:
-                request_args[key] = params[key]
+                request_args[key] = params.get(key)
 
         verify = params.get("verify")
         if verify is not None:
@@ -285,4 +285,4 @@ class OnlineProcessor(EngineProcessor):
             self.logger.debug(e.message)
         except Exception as e:  # pylint: disable=broad-except
             self.handle_exception(result_container, e)
-            self.logger.debug("exception : {0}".format(e))
+            self.logger.exception("exception : {0}".format(e))
